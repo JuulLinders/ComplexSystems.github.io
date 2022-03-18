@@ -55,6 +55,7 @@ pacf(na.exclude(RR$ibi_s),lag.max = 1000)
 
 The plot below describes the results of this test. The blue lines indicate the thresholds of the auto-correlations. As can be seen, there are several correlations that cross the thresholds. This means the correlations indicate long-range temporal correlations and therefore memory. 
 ![image](https://user-images.githubusercontent.com/78364132/158976407-25fc1140-7d16-419a-bc8e-61bc066ed76c.png)
+
 To conclude, both tests show the data of seconds between heartbeats have memory. 
 
 The second described characteristic of complex systems is the existence of regime shifts. Those can be tested for by both the Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test and by a change point analysis. A KPSS test will test the null hypothesis that there is stationarity (opposed to phase transitions).
