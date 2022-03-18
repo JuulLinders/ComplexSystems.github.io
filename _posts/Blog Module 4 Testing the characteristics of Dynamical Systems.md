@@ -1,5 +1,5 @@
 ## Blog Module 4 Testing the characteristics of Dynamical Systems
-Up to now, you have read a lot about complex systems and their characteristics. This blog will give you a short recap of some important features, after which three specific characteristics of complex systems are explained. Lastly a further elaboration on testing for one of these characteristics is provided. 
+Up to now, you have read a lot about complex systems and their characteristics. This blog will give you a short recap of some important features, after which three specific characteristics of complex systems are explained. Lastly a further elaboration on testing for two of these characteristics is provided. 
  
 Dynamical systems can be defined as systems whose behavior evolves or changes over time. Those dynamical systems are considered complex if they entail nonlinear transitions and many interacting components. Those systems often show soft assembly, meaning they reflect a temporary coalition of coordinated entities. To make this easier to understand: opposed to this are non-biological systems that are hard molded. They are externally coordinated, while complex systems are not. Complex systems seem to regulate themselves. 
  
@@ -31,8 +31,7 @@ X = RR$X
 time = RR$time
 ibi_s = RR$ibi_s 
 ```
-
-![image](https://user-images.githubusercontent.com/78364132/158975341-b34710a1-af50-4af6-b901-ad9b9c1a0dae.png)
+![image](https://user-images.githubusercontent.com/78364132/159040087-c3edb223-5553-4bed-9ef0-93534280f001.png)
 
 The data is familiar to you, it entails the number of seconds between heartbeats of a healthy, young male measured over the day. 
  
@@ -54,7 +53,7 @@ pacf(na.exclude(RR$ibi_s),lag.max = 1000)
 ```
 
 The plot below describes the results of this test. The blue lines indicate the thresholds of the auto-correlations. As can be seen, there are several correlations that cross the thresholds. This means the correlations indicate long-range temporal correlations and therefore memory. 
-![image](https://user-images.githubusercontent.com/78364132/158976407-25fc1140-7d16-419a-bc8e-61bc066ed76c.png)
+![image](https://user-images.githubusercontent.com/78364132/159040171-8e557c72-ccce-4adb-9fe5-604ec5f1fdbf.png)
 
 To conclude, both tests show the data of seconds between heartbeats have memory. 
 
@@ -77,7 +76,8 @@ for (i in 1:length(RR$ibi_s - interval)){
 variance
 plot(c(1:length(variance)), variance)
 ```
-![image](https://user-images.githubusercontent.com/78364132/158976684-22ad6aaf-5c36-4b51-87ed-c3880fb5c72e.png)
+![image](https://user-images.githubusercontent.com/78364132/159040222-a99a9bb8-dfd3-411b-b2e1-66fbbc61c001.png)
+
 
 Two change points are quite easily distinguishable. However, this analysis is very sensitive to the length of the interval that is used to calculate the variance. For example, when using an interval of 5000 the following graph is created. 
 ```
@@ -91,8 +91,10 @@ for (i in 1:length(RR$ibi_s - interval)){
 variance
 plot(c(1:length(variance)), variance)
 ```
-![image](https://user-images.githubusercontent.com/78364132/158976737-c59ddc26-f0d6-472f-88d6-3d8f77ac63c0.png)
+![image](https://user-images.githubusercontent.com/78364132/159040244-1ebac4db-9d98-4564-9e86-ab351a48c3e3.png)
 
 Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give us enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.
+
+To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. 
 
 
