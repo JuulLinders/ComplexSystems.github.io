@@ -77,6 +77,7 @@ variance
 plot(c(1:length(variance)), variance)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/158976684-22ad6aaf-5c36-4b51-87ed-c3880fb5c72e.png)
+
 Two change points are quite easily distinguishable. However, this analysis is very sensitive to the length of the interval that is used to calculate the variance. For example, when using an interval of 5000 the following graph is created. 
 ```
 variance = c()
@@ -90,6 +91,7 @@ variance
 plot(c(1:length(variance)), variance)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/158976737-c59ddc26-f0d6-472f-88d6-3d8f77ac63c0.png)
+
 Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give us enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.
 
 
