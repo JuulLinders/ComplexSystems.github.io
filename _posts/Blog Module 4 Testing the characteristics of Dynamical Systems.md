@@ -20,12 +20,12 @@ The data of the young male beat to beat interval is used to show how you can app
 ``` RR <- read.csv("RR.csv")
 RR <- subset(RRtest, ibi_s< 3)
 
-ggplot(data = RRtest, aes(x = X, y = ibi_s))+
+ggplot(data = RR, aes(x = X, y = ibi_s))+
   geom_line()+
   scale_x_continuous("Measurement number", limits = c(1, 80000))+
-  scale_y_continuous("Time between heartbeats")+
-  ggtitle("beat to beat interval timeseries")+
-  theme(panel.grid = element_blank())
+  scale_y_continuous("Time in seconds between heartbeats")+
+  ggtitle("Beat to beat interval timeseries")+
+  theme(plot.title = element_text(hjust=0.5), panel.background = element_rect(fill = "white", colour = "black"), panel.grid = element_blank())
 
 X = RR$X
 time = RR$time
@@ -49,7 +49,8 @@ This conclusion may come a bit too soon if you are unfamiliar with the concept, 
  
 The example above tested for memory by the marker of dependency of past values, via the Bartels Test. Another way to test for memory is by the long-range temporal correlations, via the Partial Auto-Correlation. 
 ```
-pacf(na.exclude(RR$ibi_s),lag.max = 1000)
+Plotpacf <- pacf(na.exclude(RR$ibi_s),lag.max = 1000)
+plot(Plotpacf, main = "Plot partial ACF")
 ```
 
 The plot below describes the results of this test. The blue lines indicate the thresholds of the auto-correlations. As can be seen, there are several correlations that cross the thresholds. This means the correlations indicate long-range temporal correlations and therefore memory. 
@@ -74,7 +75,8 @@ for (i in 1:length(RR$ibi_s - interval)){
 }
   
 variance
-plot(c(1:length(variance)), variance)
+plot(c(1:length(variance)), variance, main = "Variance over fixed interval 1000",
+     ylab = "Variance", xlab = "Measurement number")
 ```
 ![image](https://user-images.githubusercontent.com/78364132/159040222-a99a9bb8-dfd3-411b-b2e1-66fbbc61c001.png)
 
@@ -89,7 +91,8 @@ for (i in 1:length(RR$ibi_s - interval)){
 }
   
 variance
-plot(c(1:length(variance)), variance)
+plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000",
+     ylab = "Variance", xlab = "Measurement number")
 ```
 ![image](https://user-images.githubusercontent.com/78364132/159040244-1ebac4db-9d98-4564-9e86-ab351a48c3e3.png)
 
