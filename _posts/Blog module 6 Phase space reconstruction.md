@@ -55,10 +55,19 @@ Similarly to the False Nearest Neighbors method we find that 7 dimensions is app
 
 
 ### Visualizing the multi-dimensional system
-Using the obtained parameters for the lag and dimensions we aim to visualize the multi dimensional system. Since we use more than three dimensions our visualization will always be a simplification of the actual system. Plotting the first three dimensions of our system results in a big blue ball of fuzz.
-![image](https://user-images.githubusercontent.com/78364132/168770283-56027b72-69e6-4b4b-9e18-be7f491e91ec.png)
+Using the obtained parameters for the lag and dimensions we aim to visualize the multi dimensional system. Since we use more than three dimensions our visualization will always be a simplification of the actual system. Plotting the first three dimensions of our system results in a big colored ball of fuzz.
+```
+lines3D(HR.takens[,1], HR.takens[,2], HR.takens[,3], t= "l", col = jet.col(10), asp = 1 )
+```
+
+![image](https://user-images.githubusercontent.com/78364132/168776247-d6e89110-7ffb-4698-8a48-036b4f3d502c.png)
 
 It is very hard to say anything useful about this plot, therefore we will aim to visualize the time component.
+By plotting subsets of our matrix we might be able to say something about the trajectory over time.
+
+
+
+
 
 
 
