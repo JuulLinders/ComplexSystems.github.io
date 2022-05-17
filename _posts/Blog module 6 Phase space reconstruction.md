@@ -65,7 +65,16 @@ lines3D(HR.takens[,1], HR.takens[,2], HR.takens[,3], t= "l", col = jet.col(10), 
 It is very hard to say anything useful about this plot, therefore we will aim to visualize the time component.
 By plotting subsets of our matrix we might be able to say something about the trajectory over time.
 
+```
+lines3D(HR.takens[,1][1:10000], HR.takens[,2][1:10000], HR.takens[,3][1:10000], t= "l", col = jet.col(10), asp = 1 )
+lines3D(HR.takens[,1][10000:20000], HR.takens[,2][10000:20000], HR.takens[,3][10000:20000], t= "l", col = jet.col(10), asp = 1 )
+lines3D(HR.takens[,1][20000:30000], HR.takens[,2][20000:30000], HR.takens[,3][20000:30000], t= "l", col = jet.col(10), asp = 1 )
+lines3D(HR.takens[,1][30000:40000], HR.takens[,2][30000:40000], HR.takens[,3][30000:40000], t= "l", col = jet.col(10), asp = 1 )
+```
 
+Solarized dark             |  Solarized Ocean
+:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/78364132/168777522-7050e62f-2c48-42f1-832d-af8c2cb542f5.png)  |  ![image](https://user-images.githubusercontent.com/78364132/168777581-206a9aae-7eaf-439a-a437-5f9216dd260a.png)
 
 
 
