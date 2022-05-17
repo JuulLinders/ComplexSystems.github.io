@@ -25,6 +25,7 @@ Applying both techniques to the heart rate time series results in the following 
 tau.acp <- timeLag(HR, technique = "acf", lag.max = (15000), do.plot = T)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168767980-45650b13-c4b0-484e-8f21-59c800152c78.png)
+
 The first zero crossing of the autocorrelation function would suggest a lag of 10000. Since the length of our time series is approximately 60000 we would be able to use this delay.
 ```
 tau.acp <- timeLag(HR, technique = "ami", lag.max = (15000), do.plot = T)
