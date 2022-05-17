@@ -7,7 +7,7 @@ First, we should think about whether it is useful to apply phase space reconstru
 
 This module will consists of three steps: determining the optimal delay, determining the embedding dimensions and visualizing the multi-dimensional system.
 
-# Delay
+### Delay
 By determining the appropriate time delay we are able to maximally seperate the trajectories. We can use two methods in order to find this delay: 
 - Find the first zero crossing of the autocorrelation function
 
@@ -34,7 +34,7 @@ tau.acp <- timeLag(HR, technique = "ami", lag.max = (15000), do.plot = T)
 
 First local minimum of the average mutual information function is found with a delay of approximately 3500. Since 3500 is a rather small lag it will result in little missing data. In future steps this lag will be used.
 
-# Embedding dimensions
+### Embedding dimensions
 Similarly to determining the delay, we will pose two techniques for determining the number of embedding dimensions: False Nearest Neighbors and Cao’s (1997) method.
 
 Using the False Nearest Neighbors method with parameters delay = 3500  m = 15, t = 50, d = 3500, eps = sd(HR)/10) provides us with the following plot.
