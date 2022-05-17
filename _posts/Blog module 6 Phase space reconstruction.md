@@ -20,3 +20,19 @@ We might remember this function from module 4 where we used it to confirm that t
 Note that the two methods often obtain different ”optimal” delays. One should take the size of the time series into account when determining a delay. Choosing a high delay relative to the length of the time series will cause more missing data. However, Grassberger & Schreiber (1991) found that the outcome of the phase space reconstruction is rather robust if the right embedding dimension is chosen.
 	
 Applying both techniques to the heart rate time series results in the following plots.
+
+```
+tau.acp <- timeLag(HR, technique = "acf", lag.max = (15000), do.plot = T)
+```
+![image](https://user-images.githubusercontent.com/78364132/168767980-45650b13-c4b0-484e-8f21-59c800152c78.png)
+The first zero crossing of the autocorrelation function would suggest a lag of 10000. Since the length of our time series is approximately 60000 we would be able to use this delay.
+```
+tau.acp <- timeLag(HR, technique = "ami", lag.max = (15000), do.plot = T)
+```
+![image](https://user-images.githubusercontent.com/78364132/168768036-ae3d2ca8-8608-4530-aad5-cf9624d58572.png)
+First local minimum of the average mutual information function is found with a delay of approximately 3500.
+
+
+
+
+
