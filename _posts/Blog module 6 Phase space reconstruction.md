@@ -54,6 +54,12 @@ emb.dim = estimateEmbeddingDim(HR, time.lag = 3500, max.embedding.dim = 15)
 Similarly to the False Nearest Neighbors method we find that 7 dimensions is appropriate for our time series.
 
 
+### Visualizing the multi-dimensional system
+Using the obtained parameters for the lag and dimensions we aim to visualize the multi dimensional system. Since we use more than three dimensions our visualization will always be a simplification of the actual system. Plotting the first three dimensions of our system results in a big blue ball of fuzz.
+![image](https://user-images.githubusercontent.com/78364132/168770283-56027b72-69e6-4b4b-9e18-be7f491e91ec.png)
+
+It is very hard to say anything useful about this plot, therefore we will aim to visualize the time component.
+
 
 
 
