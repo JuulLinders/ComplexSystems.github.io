@@ -31,7 +31,27 @@ The first zero crossing of the autocorrelation function would suggest a lag of 1
 tau.acp <- timeLag(HR, technique = "ami", lag.max = (15000), do.plot = T)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768036-ae3d2ca8-8608-4530-aad5-cf9624d58572.png)
-First local minimum of the average mutual information function is found with a delay of approximately 3500.
+
+First local minimum of the average mutual information function is found with a delay of approximately 3500. Since 3500 is a rather small lag it will result in little missing data. In future steps this lag will be used.
+
+# Embedding dimensions
+Similarly to determining the delay, we will pose two techniques for determining the number of embedding dimensions: False Nearest Neighbors and Cao’s (1997) method.
+
+Using the False Nearest Neighbors method with parameters delay = 3500  m = 15, t = 50, d = 3500, eps = sd(HR)/10) provides us with the following plot.
+```
+fnn.out = false.nearest(HR, m = 15, t = 50, d = 3500, eps = sd(HR)/10)
+plot(fnn.out)
+```
+![image](https://user-images.githubusercontent.com/78364132/168768653-32353169-857f-4523-b036-3535e2c2b8dc.png)
+Using the elbow rule we determine that 7 is the optimal embedding dimension.
+Using Cao's method (1997) we obtain the following plot:
+```
+emb.dim = estimateEmbeddingDim(HR, time.lag = 3500, max.embedding.dim = 15)
+```
+![image](https://user-images.githubusercontent.com/78364132/168768869-16d3240c-d61e-4b6d-b62d-2ace23c90e7a.png)
+Similarly to the False Nearest Neighbors method we find that 7 dimensions is appropriate for our time series.
+
+
 
 
 
