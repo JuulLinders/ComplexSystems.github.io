@@ -43,12 +43,14 @@ fnn.out = false.nearest(HR, m = 15, t = 50, d = 3500, eps = sd(HR)/10)
 plot(fnn.out)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768653-32353169-857f-4523-b036-3535e2c2b8dc.png)
+
 Using the elbow rule we determine that 7 is the optimal embedding dimension.
 Using Cao's method (1997) we obtain the following plot:
 ```
 emb.dim = estimateEmbeddingDim(HR, time.lag = 3500, max.embedding.dim = 15)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768869-16d3240c-d61e-4b6d-b62d-2ace23c90e7a.png)
+
 Similarly to the False Nearest Neighbors method we find that 7 dimensions is appropriate for our time series.
 
 
