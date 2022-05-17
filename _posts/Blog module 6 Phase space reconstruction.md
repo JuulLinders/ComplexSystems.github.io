@@ -79,8 +79,7 @@ Index 1 to 10000           |  Index 10000 to 20000
 
 Index 20000 to 30000           |  Index 30000 to 40000  
 :-------------------------:|:-------------------------:
-![image](https://user-images.githubusercontent.com/78364132/168778081-4e80606d-4b6a-4186-9313-f20532896990.png)
- |  ![image](https://user-images.githubusercontent.com/78364132/168778108-8608f04e-4367-43cd-9e5a-eaaad7a8c6d3.png)
+![image](https://user-images.githubusercontent.com/78364132/168778081-4e80606d-4b6a-4186-9313-f20532896990.png) |  ![image](https://user-images.githubusercontent.com/78364132/168778108-8608f04e-4367-43cd-9e5a-eaaad7a8c6d3.png)
 
 
 
