@@ -72,9 +72,15 @@ lines3D(HR.takens[,1][20000:30000], HR.takens[,2][20000:30000], HR.takens[,3][20
 lines3D(HR.takens[,1][30000:40000], HR.takens[,2][30000:40000], HR.takens[,3][30000:40000], t= "l", col = jet.col(10), asp = 1 )
 ```
 
-Solarized dark             |  Solarized Ocean
+Index 1 to 10000           |  Index 10000 to 20000  
 :-------------------------:|:-------------------------:
 ![image](https://user-images.githubusercontent.com/78364132/168777522-7050e62f-2c48-42f1-832d-af8c2cb542f5.png)  |  ![image](https://user-images.githubusercontent.com/78364132/168777581-206a9aae-7eaf-439a-a437-5f9216dd260a.png)
+
+
+Index 20000 to 30000           |  Index 30000 to 40000  
+:-------------------------:|:-------------------------:
+![image](https://user-images.githubusercontent.com/78364132/168778081-4e80606d-4b6a-4186-9313-f20532896990.png)
+ |  ![image](https://user-images.githubusercontent.com/78364132/168778108-8608f04e-4367-43cd-9e5a-eaaad7a8c6d3.png)
 
 
 
