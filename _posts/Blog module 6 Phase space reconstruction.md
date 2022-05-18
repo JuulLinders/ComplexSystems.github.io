@@ -82,9 +82,16 @@ Index 20000 to 30000           |  Index 30000 to 40000
 ![image](https://user-images.githubusercontent.com/78364132/168778081-4e80606d-4b6a-4186-9313-f20532896990.png) |  ![image](https://user-images.githubusercontent.com/78364132/168778108-8608f04e-4367-43cd-9e5a-eaaad7a8c6d3.png)
 
 The figures differ significantly, meaning that there is a change over time. However, we can still say little about what the dimension could represent.
+We notice that most of the values 
 Naturally, we only plotted the first three dimensions and one should check all the plots before coming to a conclusion.
 
 
+### References
+Ozheredov, V. A., Chibisov, S. M., Blagonravov, M. L., Khodorovich, N. A., Demurov, E. A., Goryachev, V. A., ... & Meladze, Z. A. (2017). Influence of geomagnetic activity and earth weather changes on heart rate and blood pressure in young and healthy population. International journal of biometeorology, 61(5), 921-929.
+
+Vadlamudi, C. V., & Vadlamudi, S. P. D. (2018). Mathematical Essentials. In Handbook of statistics (Vol. 38, pp. 53-73). Elsevier.
+
+GRASSBERGER, Peter; SCHREIBER, Thomas; SCHAFFRATH, Carsten. Nonlinear time sequence analysis. International Journal of Bifurcation and Chaos, 1991, 1.03: 521-547.
 
 
 
