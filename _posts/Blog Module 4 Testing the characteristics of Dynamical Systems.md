@@ -14,7 +14,7 @@ This characteristic relates to the concept of chaos. Chaos entails that very sim
  
 The described characteristic of memory can be tested for using the Bartels rank test and by inspecting autocorrelation functions. The first tests the memory by assessing dependency of past values and the latter by long-range temporal correlations.
  
-The data of the young male's heartrate is used to show how those tests can be applied.
+The data of the young male's heartrate, introduced in the previous blog, is used to show how those tests can be applied.
 
 
 ``` RR <- read.csv("RR.csv")
@@ -40,7 +40,7 @@ So, a Bartels Ratio Test is applied in the following way:
  ```
  bartels.rank.test(RR$ibi_s, alternative = "two.sided")
  ```
-The test has tested for the null hypothesis to be true, for which the p-value is below 2.2e-16. This means that this hypothesis is rejected, and the alternative hypothesis is assumed. This hypothesis assumes non randomness and thus assumes memory. 
+The test has tested whether the the null hypothesis should be rejected or not, for which the p-value is below 2.2e-16. This means that this hypothesis is rejected, and the alternative hypothesis is assumed. This hypothesis assumes non randomness and thus assumes memory. 
  
 Explaining this conclusion in light of the described terms: memory means the results are the way they are, due to previous results. So, although memory is the cause, sometimes the results are considered random. This is due to the complexity / chaotic appearance of the systems. This test has tested for the assumption of randomness. This one was rejected, so memory is assumed. 
 
@@ -96,6 +96,6 @@ plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000"
 
 Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.
 
-To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. 
+To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules (INCLUDE WHICH ONES) and are thus useful to understand. 
 
 
