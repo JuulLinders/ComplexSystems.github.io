@@ -17,51 +17,39 @@ The described characteristic of memory can be tested for using the Bartels rank 
 The data of the young male's heartrate, introduced in the previous blog, is used to show how those tests can be applied.
 
 
-``` RR <- read.csv("RR.csv")
-RR <- subset(RRtest, ibi_s< 3)
+``` data <- read.csv("Actigraph.csv")
 
-ggplot(data = RR, aes(x = X, y = ibi_s))+
-  geom_line()+
-  scale_x_continuous("Measurement number", limits = c(1, 80000))+
-  scale_y_continuous("Time in seconds between heartbeats")+
-  ggtitle("Beat to beat interval timeseries")+
-  theme(plot.title = element_text(hjust=0.5), panel.background = element_rect(fill = "white", colour = "black"), panel.grid = element_blank())
-
-X = RR$X
-time = RR$time
-ibi_s = RR$ibi_s 
 ```
-![image](https://user-images.githubusercontent.com/78364132/159040087-c3edb223-5553-4bed-9ef0-93534280f001.png)
- 
+![image](https://user-images.githubusercontent.com/105786135/169700933-b0b3bdd8-4c0b-4a01-b250-0b36885b9f0b.png)
+
+
 To test for the complexity of this system, the characteristic of memory is assessed. Memory can be marked by three factors, namely the dependency on past values, long-range temporal correlations and non-stationary temporal correlations. The first can be assessed by the Bartel Rank tests and the latter two via ACF’s. 
  
-
 So, a Bartels Ratio Test is applied in the following way:
  ```
- bartels.rank.test(RR$ibi_s, alternative = "two.sided")
+bartels.rank.test(data$HR, alternative = "two.sided")
  ```
 The test has tested whether the the null hypothesis should be rejected or not, for which the p-value is below 2.2e-16. This means that this hypothesis is rejected, and the alternative hypothesis is assumed. This hypothesis assumes non randomness and thus assumes memory. 
  
 Explaining this conclusion in light of the described terms: memory means the results are the way they are, due to previous results. So, although memory is the cause, sometimes the results are considered random. This is due to the complexity / chaotic appearance of the systems. This test has tested for the assumption of randomness. This one was rejected, so memory is assumed. 
-
  
 The example above tested for memory by the marker of dependency of past values, via the Bartels Test. Another way to test for memory is by the long-range temporal correlations, via the Partial Auto-Correlation. 
 ```
-Plotpacf <- pacf(na.exclude(RR$ibi_s),lag.max = 1000)
+Plotpacf <- pacf(na.exclude(data$HR),lag.max = 1000)
 plot(Plotpacf, main = "Plot partial ACF")
 ```
 
 The plot below describes the results of this test. The blue lines indicate the thresholds of the auto-correlations. As can be seen, there are several correlations that cross the thresholds. This means the correlations indicate long-range temporal correlations and therefore memory. 
-![image](https://user-images.githubusercontent.com/78364132/159040171-8e557c72-ccce-4adb-9fe5-604ec5f1fdbf.png)
+![image](https://user-images.githubusercontent.com/105786135/169701189-c83a7552-d9f5-4f37-877d-3504dde86d4d.png)
 
 To conclude, both tests show the data of seconds between heartbeats have memory. 
 
 The second described characteristic of complex systems is the existence of regime shifts. Those can be tested for by both the Kwiatkowski-Phillips-Schmidt-Shin (KPSS) test and by a change point analysis. A KPSS test will test the null hypothesis that there is stationarity (opposed to phase transitions).
 ```
-kpss.test(na.exclude(RR$ibi_s), lshort=TRUE, 
+kpss.test(na.exclude(data$HR), lshort=TRUE, 
           null="Level")
 ```
-The results of this test provided a KPSS level = 55.05, Truncation lag parameter = 20, with p-value = 0.01. This p value indicates significance and therefore the assumption of stationarity can be rejected and non-stationarity is assumed. In other words, the data shows signs of nonstationarity. 
+The results of this test provided a KPSS level = 40.13, Truncation lag parameter = 20, with p-value < 0.01. This p value indicates significance and therefore the assumption of stationarity can be rejected and non-stationarity is assumed. In other words, the data shows signs of nonstationarity. 
 
 The change point analysis will check when the distributional properties change. However, since our time series contains over 70000 data points the change point analysis is computationally very heavy. An alternative way to find a change point is to measure the variance over a fixed interval throughout the time series. Areas that have a high variance then suggest a change in distributional properties and therefore a change point. Calculating the variance over every 1000 values, provides us with the following graph. 
 ```
