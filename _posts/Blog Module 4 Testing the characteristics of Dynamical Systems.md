@@ -17,7 +17,9 @@ The described characteristic of memory can be tested for using the Bartels rank 
 The data of the young male's heartrate, introduced in the previous blog, is used to show how those tests can be applied.
 
 
-``` data <- read.csv("Actigraph.csv")
+``` 
+data <- read.csv("Actigraph.csv")
+plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartrate")
 
 ```
 ![image](https://user-images.githubusercontent.com/105786135/169700933-b0b3bdd8-4c0b-4a01-b250-0b36885b9f0b.png)
@@ -40,6 +42,7 @@ plot(Plotpacf, main = "Plot partial ACF")
 ```
 
 The plot below describes the results of this test. The blue lines indicate the thresholds of the auto-correlations. As can be seen, there are several correlations that cross the thresholds. This means the correlations indicate long-range temporal correlations and therefore memory. 
+
 ![image](https://user-images.githubusercontent.com/105786135/169701189-c83a7552-d9f5-4f37-877d-3504dde86d4d.png)
 
 To conclude, both tests show the data of seconds between heartbeats have memory. 
@@ -72,8 +75,8 @@ Two change points are quite easily distinguishable. However, this analysis is ve
 variance = c()
 interval = 5000
 
-for (i in 1:length(RR$ibi_s - interval)){
-  variance[i] <- var(RR$ibi_s[i:(i+interval)])
+for (i in 1:length(data$HR - interval)){
+  variance[i] <- var(data$HR[i:(i+interval)])
 }
   
 variance
@@ -84,6 +87,6 @@ plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000"
 
 Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.
 
-To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules (INCLUDE WHICH ONES) and are thus useful to understand. 
+To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules (WHICH"?>>) and are thus useful to understand. 
 
 
