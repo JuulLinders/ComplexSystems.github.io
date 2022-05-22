@@ -59,18 +59,17 @@ The change point analysis will check when the distributional properties change. 
 variance = c()
 interval = 1000
 
-for (i in 1:length(RR$ibi_s - interval)){
-  variance[i] <- var(RR$ibi_s[i:(i+interval)])
+for (i in 1:length(data$HR - interval)){
+  variance[i] <- var(data$HR[i:(i+interval)])
 }
   
 variance
 plot(c(1:length(variance)), variance, main = "Variance over fixed interval 1000",
      ylab = "Variance", xlab = "Measurement number")
 ```
-![image](https://user-images.githubusercontent.com/78364132/159040222-a99a9bb8-dfd3-411b-b2e1-66fbbc61c001.png)
+![image](https://user-images.githubusercontent.com/105786135/169703829-eaa35076-062a-4192-9c17-a9cfb1a4d614.png)
 
-
-Two change points are quite easily distinguishable. However, this analysis is very sensitive to the length of the interval that is used to calculate the variance. For example, when using an interval of 5000 the following graph is created. 
+Several change points are more or less distinguishable. However, this analysis is very sensitive to the length of the interval that is used to calculate the variance. For example, when using an interval of 5000 the following graph is created. 
 ```
 variance = c()
 interval = 5000
@@ -83,9 +82,8 @@ variance
 plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000",
      ylab = "Variance", xlab = "Measurement number")
 ```
-![image](https://user-images.githubusercontent.com/78364132/159040244-1ebac4db-9d98-4564-9e86-ab351a48c3e3.png)
-
-Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.
+![image](https://user-images.githubusercontent.com/105786135/169703820-756dbca9-d6b8-49d3-ae96-d1531f331ca7.png)
+_Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.___
 
 To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules (WHICH"?>>) and are thus useful to understand. 
 
