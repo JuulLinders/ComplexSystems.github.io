@@ -22,8 +22,7 @@ data <- read.csv("Actigraph.csv")
 plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartrate")
 
 ```
-![image](https://user-images.githubusercontent.com/105786135/169700933-b0b3bdd8-4c0b-4a01-b250-0b36885b9f0b.png)
-
+![image](https://user-images.githubusercontent.com/105786135/169703994-649268bc-eb5f-4f8b-aa23-df88387b2f17.png)
 
 To test for the complexity of this system, the characteristic of memory is assessed. Memory can be marked by three factors, namely the dependency on past values, long-range temporal correlations and non-stationary temporal correlations. The first can be assessed by the Bartel Rank tests and the latter two via ACF’s. 
  
@@ -42,8 +41,7 @@ plot(Plotpacf, main = "Plot partial ACF")
 ```
 
 The plot below describes the results of this test. The blue lines indicate the thresholds of the auto-correlations. As can be seen, there are several correlations that cross the thresholds. This means the correlations indicate long-range temporal correlations and therefore memory. 
-
-![image](https://user-images.githubusercontent.com/105786135/169701189-c83a7552-d9f5-4f37-877d-3504dde86d4d.png)
+![image](https://user-images.githubusercontent.com/105786135/169704029-99ef7535-8f1b-4c76-a1eb-bce87386d1cb.png)
 
 To conclude, both tests show the data of seconds between heartbeats have memory. 
 
@@ -69,7 +67,7 @@ plot(c(1:length(variance)), variance, main = "Variance over fixed interval 1000"
 ```
 ![image](https://user-images.githubusercontent.com/105786135/169703829-eaa35076-062a-4192-9c17-a9cfb1a4d614.png)
 
-Several change points are more or less distinguishable. However, this analysis is very sensitive to the length of the interval that is used to calculate the variance. For example, when using an interval of 5000 the following graph is created. 
+Several change points are more or less distinguishable. However, this analysis is sensitive to the length of the interval that is used to calculate the variance. For example, when using an interval of 5000 the following graph is created. 
 ```
 variance = c()
 interval = 5000
@@ -83,7 +81,7 @@ plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000"
      ylab = "Variance", xlab = "Measurement number")
 ```
 ![image](https://user-images.githubusercontent.com/105786135/169703820-756dbca9-d6b8-49d3-ae96-d1531f331ca7.png)
-_Still, two points are quite prominent, however, they are less sharp than with the interval of 1000. This does, however, give enough evidence to assume that there are likely two phase transitions. This could, in practice, refer to the change in activity of the male participant. From awake to sleeping and then awake again.___
+_This shows better distinguishable change points and thus provides evidence for phase transitions. This could, in practice, refer to the change in activity of the male participant. A list of activities the male performed throughout the day is available and helps to check what behaviors accompany those changes in phases. This comparison for example showed that a caffeine containing product was used (around point XXX) and a clear change in heart rate can be seen at that moment._
 
 To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules (WHICH"?>>) and are thus useful to understand. 
 
