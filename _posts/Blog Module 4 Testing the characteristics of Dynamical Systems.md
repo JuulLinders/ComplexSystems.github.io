@@ -81,7 +81,7 @@ plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000"
      ylab = "Variance", xlab = "Measurement number")
 ```
 ![image](https://user-images.githubusercontent.com/105786135/169703820-756dbca9-d6b8-49d3-ae96-d1531f331ca7.png)
-_This shows better distinguishable change points and thus provides evidence for phase transitions. This could, in practice, refer to the change in activity of the male participant. A list of activities the male performed throughout the day is available and helps to check what behaviors accompany those changes in phases. This comparison for example showed that a caffeine containing product was used (around point XXX) and a clear change in heart rate can be seen at that moment._
+This shows better distinguishable change points and thus provides evidence for phase transitions. This could, in practice, refer to the change in activity of the male participant. A list of activities the male performed throughout the day is available  and helps to check what behaviors accompany those changes in phases. This comparison for example showed that the participant slept until around 15.45, used caffeine and went sleeping till 18.30 again. A clear change in heart rate can be seen at that moment, which is between the indexes of 20.000 and 30.000.
 
 To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules (WHICH"?>>) and are thus useful to understand. 
 
