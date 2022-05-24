@@ -3,6 +3,12 @@
 In the previous module we learned about attractor dynamics and how we can apply
 different techniques to visualize these dynamics. In this module we will learn about phase space reconstruction. The main goal of this module is to construct a multi-dimensional system from a single dimensional time series. Similarly to the other modules, we will use the heart rate time series to guide the reader through the techniques that are used in order to create this multi-dimensional system. The heart rate time series is depicted below. 
 
+``` 
+data <- read.csv("Actigraph.csv")
+plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartrate")
+
+```
+
 ![image](https://user-images.githubusercontent.com/78364132/169965814-fb68c871-22f9-4216-94a0-1758c6778e3e.png)
 
 First, we should think about whether it is useful to apply phase space reconstruction to a heart rate time series. Does it make sense that the single-dimensional time series can be reconstructed as a multi-dimensional system? One could very well imagine heart rate to have more dimensions since the heart rate is part of the system of the human body. Multiple factors can influence heart rate: activity of the human, mental state and even the weather can influence heart rate (Ozheredov et al., 2017). Thus it is valid to apply the phase space reconstruction technique to the heart rate time series. 
