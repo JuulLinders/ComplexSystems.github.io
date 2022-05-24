@@ -10,6 +10,8 @@ plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartr
 ```
 ![image](https://user-images.githubusercontent.com/78364132/169966096-dedcb539-49d0-439b-a297-0ced221ff2a7.png)
 
+*Figure 1: heart rate time series*
+
 RQA is a technique to quanitify the number and duration of recurrences of a system. Several measures can be derived using RQA which will increase one’s understanding of the system.
 Remember that we obtained two parameters in the previous module: delay = 3500 and embedding dimension = 7. In order to apply RQA we additionally need to determine a radius parameter. This radius parameter represents a threshold to determine whether two points are recurrent or not. A rule of thumb for this parameter is we choose a radius that gives between 1 to 5 percent recurrence. This percentage may differ based on the stochasticity of the time series. Highly stochastic time series are recommended to use a higher recurrence percentage whereas for more deterministic time series one should aim for a lower recurrence percentage.
 
@@ -20,6 +22,9 @@ HR <- data$HR
 rqa1<-crqa(ts1 = HR[1:30000], ts2 = HR[1:30000], delay = 3500, embed = 7, rescale = 0, radius = 20 , method = "rqa", datatype = 'continuous')
 print(rqa1[1:10])
 ```
+![plotsubset1](https://user-images.githubusercontent.com/78364132/170041415-d9ef457a-489b-40dd-aba9-4088d8b81376.png)
+
+*Figure 2: Recurrence plot for subset 1*
 
 | Property  | Value for 1st subset|
 | ------------- | ------------- |
@@ -30,6 +35,8 @@ print(rqa1[1:10])
 | Shannon information entropy of diagonal line lengths longer than the minimum length  | 2.83  |
 | Proportion of recurrent points forming vertical line structures  | 98.03  |
 | The average length of vertical line structures  | 11.46  |
+
+*Table 1: property values for subset 1*
 
 Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large to obtain a recurrence rate of 4.76. 
 
@@ -56,6 +63,8 @@ print(rqa2[1:10])
 | Shannon information entropy of diagonal line lengths longer than the minimum length  | 3.29  |
 | Proportion of recurrent points forming vertical line structures  | 98.71  |
 | The average length of vertical line structures  | 17.74  |
+
+*Table 2: property values for subset 2*
 
 
 
