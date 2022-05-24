@@ -7,9 +7,8 @@ In order to do so, we will use recurrence quantification analysis (RQA) and appl
 ``` 
 data <- read.csv("Actigraph.csv")
 plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartrate")
-
 ```
-
+![image](https://user-images.githubusercontent.com/78364132/169966096-dedcb539-49d0-439b-a297-0ced221ff2a7.png)
 
 RQA is a technique to quanitify the number and duration of recurrences of a system. Several measures can be derived using RQA which will increase one’s understanding of the system.
 Remember that we obtained two parameters in the previous module: delay = 3500 and embedding dimension = 7. In order to apply RQA we additionally need to determine a radius parameter.
