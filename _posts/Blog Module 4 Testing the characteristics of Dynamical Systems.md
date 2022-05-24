@@ -2,7 +2,8 @@
 Complex systems have been introduced in the previous module. This module will provide a short recap of some important features, after which three specific characteristics of complex systems are explained. Lastly a further elaboration on testing for two of these characteristics is provided. 
  
 Dynamical systems can be defined as systems whose behavior constantly evolves and changes over time. Those dynamical systems are considered complex if they entail nonlinear transitions and many interacting components. Those systems often show soft assembly, meaning they reflect a temporary coalition of coordinated entities. Opposed to such systems are non-biological systems that are hard molded. Those hard molded systems are externally coordinated, while complex systems are not. Complex systems seem to regulate themselves. 
- 
+
+### The components
 The components of these dynamical systems are fundamentally interdependent and (therefore) hard to assign precise causal roles to. The structure of a system is thus emergent and the way it is organized is depending on contextual factors. This is also called Interaction Dominant dynamics. Three specific characteristics of dynamic systems are the focus of this module. They are the memory complex systems have, the regime shifts they go through and the sensitive dependence on initial conditions. Some of those characteristics are described in the previous module. They will (again) be explained and thereafter some explanation on testing for them is given. 
  
 The first characteristic, memory, relates to complex systems developing over time and their current states depending on previous ones. In other words, future states are dependent on past values. The past values / experiences are the aspects that is referred to as the memory of complex systems.
@@ -12,6 +13,7 @@ The second one is the regime shifts. This relates to the phase transitions that 
 The third and last one is the sensitive dependence on initial conditions. This one is a bit more difficult and not described in the previous module and will therefore be elaborated on further. Initial conditions in complex systems are the processes / behavior / or anything you measure that are present at the start. Because complex systems have memory, past values influence future states. Consequently, minor differences at the start, can evolve to huge differences in the future. 
 This characteristic relates to the concept of chaos. Chaos entails that very simple deterministic, nonlinear systems can produce extremely complex and unpredictable behavior. The cause of this chaos can be found in the sensitive dependence on initial conditions. So, minor differences at the start may be amplified as a system evolves over time, causing the extremely complex behavior (chaos) in nonlinear systems. Important to know, is that this is not the same as randomness. Often, scientists assume randomness once results seem unpredictable. Yet, as augmented above, history does matter in the case of complex systems. Especially because history matters so much, the initial conditions impact later states. In the case of randomness, this history would not matter. So although in one's results chaos and random results may look familiar, they are not the same. 
  
+### Testing
 The described characteristic of memory can be tested for using the Bartels rank test and by inspecting autocorrelation functions. The first tests the memory by assessing dependency of past values and the latter by long-range temporal correlations.
  
 The data of the young male's heartrate, introduced in the previous blog, is used to show how those tests can be applied.
@@ -81,6 +83,7 @@ plot(c(1:length(variance)), variance, main = "Variance over fixed interval 5000"
      ylab = "Variance", xlab = "Measurement number")
 ```
 ![image](https://user-images.githubusercontent.com/105786135/169703820-756dbca9-d6b8-49d3-ae96-d1531f331ca7.png)
+
 This shows better distinguishable change points and thus provides evidence for phase transitions. This could, in practice, refer to the change in activity of the male participant. A list of activities the male performed throughout the day is available  and helps to check what behaviors accompany those changes in phases. This comparison for example showed that the participant slept until around 15:45, used caffeine and went sleeping till 18:30 again. A clear change in heart rate can be seen at that moment, which is between the indexes of 20.000 and 30.000. Another phase shift seems to take place around index 37.000. When looking at the performed activities, it is visible that at that moment (20:30) the individual changed his behavior from sitting and relaxing for half an hour to heavy gym exercising for an hour. The change points thus indeed seem to point to phase transitions in the heart rate. 
 
 To conclude, this blog has explained three characteristics of complex systems and showed ways on how to assess two of those. Those characteristics will be referred to in future modules and are thus useful to understand. 
