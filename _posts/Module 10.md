@@ -47,8 +47,3 @@ Yet, not in all systems fractality is present. Although this does not serve as a
 To conclude, this module explained the concept of fractality, described how a DFA analysis works, showed how one can be executed and how results can be interpreted. 
 
 
-
-
-
-
-
