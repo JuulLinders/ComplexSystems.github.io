@@ -11,6 +11,8 @@ plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartr
 
 ![image](https://user-images.githubusercontent.com/78364132/169965814-fb68c871-22f9-4216-94a0-1758c6778e3e.png)
 
+*Figure 1: heart rate time series*
+
 First, we should think about whether it is useful to apply phase space reconstruction to a heart rate time series. Does it make sense that the single-dimensional time series can be reconstructed as a multi-dimensional system? One could very well imagine heart rate to have more dimensions since the heart rate is part of the system of the human body. Multiple factors can influence heart rate: activity of the human, mental state and even the weather can influence heart rate (Ozheredov et al., 2017). Thus it is valid to apply the phase space reconstruction technique to the heart rate time series. 
 
 This module will consists of three steps: determining the optimal delay, determining the embedding dimensions and visualizing the multi-dimensional system.
@@ -34,11 +36,15 @@ tau.acp <- timeLag(HR, technique = "acf", lag.max = (15000), do.plot = T)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168767980-45650b13-c4b0-484e-8f21-59c800152c78.png)
 
+*Figure 2: autocorrelation plot*
+
 The first zero crossing of the autocorrelation function would suggest a lag of 10000. Since the length of our time series is approximately 60000 we would be able to use this delay.
 ```
 tau.acp <- timeLag(HR, technique = "ami", lag.max = (15000), do.plot = T)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768036-ae3d2ca8-8608-4530-aad5-cf9624d58572.png)
+
+*Figure 3: average mutual information plot*
 
 First local minimum of the average mutual information function is found with a delay of approximately 3500. Since 3500 is a rather small lag it will result in little missing data. In future steps this lag will be used.
 
@@ -52,12 +58,17 @@ plot(fnn.out)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768653-32353169-857f-4523-b036-3535e2c2b8dc.png)
 
+*Figure 4: false nearest neighbour plot*
+
 Using the elbow rule we determine that 7 is the optimal embedding dimension.
 Using Cao's method (1997) we obtain the following plot:
 ```
 emb.dim = estimateEmbeddingDim(HR, time.lag = 3500, max.embedding.dim = 15)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768869-16d3240c-d61e-4b6d-b62d-2ace23c90e7a.png)
+
+*Figure 5: Cao's method plot*
+
 
 Similarly to the False Nearest Neighbors method we find that 7 dimensions is appropriate for our time series.
 
@@ -69,6 +80,9 @@ lines3D(HR.takens[,1], HR.takens[,2], HR.takens[,3], t= "l", col = jet.col(10), 
 ```
 
 ![image](https://user-images.githubusercontent.com/78364132/168776247-d6e89110-7ffb-4698-8a48-036b4f3d502c.png)
+
+*Figure 6: 3D plot first three dimensions*
+
 
 It is very hard to say anything useful about this plot, therefore we will aim to visualize the time component.
 By plotting subsets of our matrix we might be able to say something about the trajectory over time.
