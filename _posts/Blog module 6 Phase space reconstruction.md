@@ -58,7 +58,7 @@ plot(fnn.out)
 ```
 ![image](https://user-images.githubusercontent.com/78364132/168768653-32353169-857f-4523-b036-3535e2c2b8dc.png)
 
-*Figure 4: false nearest neighbour plot*
+*Figure 4: false nearest neighbours plot*
 
 Using the elbow rule we determine that 7 is the optimal embedding dimension.
 Using Cao's method (1997) we obtain the following plot:
