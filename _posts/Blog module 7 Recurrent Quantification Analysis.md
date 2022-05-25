@@ -15,7 +15,7 @@ plot(data$HR, type = "l", xlab = "Time", ylab = "Heartrate", main = "Plot Heartr
 RQA is a technique to quanitify the number and duration of recurrences of a system. Several measures can be derived using RQA which will increase one’s understanding of the system.
 Remember that we obtained two parameters in the previous module: delay = 3500 and embedding dimension = 7. In order to apply RQA we additionally need to determine a radius parameter. This radius parameter represents a threshold to determine whether two points are recurrent or not. A rule of thumb for this parameter is we choose a radius that gives between 1 to 5 percent recurrence. This percentage may differ based on the stochasticity of the time series. Highly stochastic time series are recommended to use a higher recurrence percentage whereas for more deterministic time series one should aim for a lower recurrence percentage.
 
-Due to the large length of our time series (> 60000 measurements) R cannot process the entire time series at once. Therefore we will split the time series into two subsets deviding the frist 30000 measurement from the final 37936. For the first subset we try different radius settings until we find that for a radius of 20 the recurrence percentage equals 4.76. 
+Due to the large length of our time series (> 60000 measurements) R cannot process the entire time series at once. Therefore we will split the time series into two subsets deviding the frist 30000 measurement from the final 37936. For the first subset we try different radius settings until we find that for a radius of 20 the recurrence percentage equals 4.76. Next, we will construct the recurrence plot and gather its properties.
 ```
 HR <- data$HR
 
@@ -38,13 +38,7 @@ print(rqa1[1:10])
 
 *Table 1: property values for subset 1*
 
-Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large to obtain a recurrence rate of 4.76. 
-
-high values of DET  and L  indicate a long time span, in which both systems visit the same region
-of phase space.
-
-
-The length of the diagonal lines in an recurrent plot can be linked to the predictability of the underlying system (Marwan et al., 2007). For our time series the average length of the line structures is relatively small (8.01) comparing to the length of the longest diagonal line segment.
+Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large to obtain a recurrence rate of 4.76. The length of the diagonal lines in an recurrent plot can be linked to the predictability of the underlying system (Marwan et al., 2007). For our time series the average length of the line structures is relatively small (8.01) comparing to the length of the longest diagonal line segment. The Shannon information entropy is a measure of the complexity of the dynamics (Letellier, 2006). 
 
 For the sake of consistency we will use the same radius for the second subset.
 
@@ -53,6 +47,8 @@ rqa2 <-crqa(ts1 = HR[30000:60000], ts2 = HR[30000:60000], delay = 3500, embed = 
 print(rqa2[1:10])
 
 ```
+
+![plotsubset2](https://user-images.githubusercontent.com/78364132/170232935-fd92aa12-e9e6-42b3-954d-770d88d3e0f3.png)
 
 | Property  | Value for 2nd subset |
 | ------------- | ------------- |
@@ -70,4 +66,8 @@ print(rqa2[1:10])
 
 
 ### References
+Letellier, C. (2006). Estimating the Shannon entropy: Recurrence plots versus symbolic dynamics. Physical review letters, 96(25), 254102.
+
 Marwan, N., Carmen Romano, M., Thiel, M., and Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics Reports, 438(5), 237-329.
+
+
