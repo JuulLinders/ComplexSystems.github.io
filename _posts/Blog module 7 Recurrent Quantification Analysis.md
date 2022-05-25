@@ -40,7 +40,7 @@ We can observe several features in the obtained recurrence plot. Marwan et al. (
 
 *Table 1: property values for subset 1*
 
-Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large to obtain a recurrence rate of 4.76. The length of the diagonal lines in an recurrent plot can be linked to the predictability of the underlying system (Marwan et al., 2007). For our time series the average length of the line structures is relatively small (8.01) comparing to the length of the longest diagonal line segment. The Shannon information entropy is a measure of the complexity of the dynamics (Letellier, 2006). The proportion of recurrent plots forming vertical line structures, or laminarity, indicates the tendency of a point to repeat the same state. This proportion is high for our recurrence plot, which could mean that the time series tends to return to the same state often.
+Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large. The length of the diagonal lines in an recurrent plot can be linked to the predictability of the underlying system (Marwan et al., 2007). For our time series the average length of the line structures is relatively small (8.01) comparing to the length of the longest diagonal line segment. The Shannon information entropy is a measure of the complexity of the dynamics (Letellier, 2006). The proportion of recurrent plots forming vertical line structures, or laminarity, indicates the tendency of a point to repeat the same state. This proportion is high for our recurrence plot, which could mean that the time series tends to return to the same state often.
 
 For the sake of consistency we will use the same radius for the second subset.
 
@@ -51,6 +51,11 @@ print(rqa2[1:10])
 ```
 
 ![plotsubset2](https://user-images.githubusercontent.com/78364132/170232935-fd92aa12-e9e6-42b3-954d-770d88d3e0f3.png)
+
+*Figure 3: Recurrence plot for subset 2*
+
+
+Subset 2 contains the part where the subject of the time series goes to bed. This means that a rather abrupt could also be observed in the recurrence plot. When comparing Figure 2 and 3 one will note that a larger portion of Figure 3 is white. This may indicate the abrupt change from daily activities to sleeping. The resemblance of the two Figures is high, as one might expect since it originates from the same time series.
 
 | Property  | Value for 2nd subset |
 | ------------- | ------------- |
@@ -64,6 +69,10 @@ print(rqa2[1:10])
 
 *Table 2: property values for subset 2*
 
+For a radius of 20 the recurrence plot of subset 2 has a higher recurrence rate than subset 1. 
+The Shannon information entropy is higher for subset 2 than for 1 indiciating more complexity of the dynamics of the time series. However, since the average length of the line structure is higher for subset 2, predictability is higher for subset 2. Therefore, altough subset 2 is more complex it is more predictable than subset 2. 
+
+In this module we were able to obtain quantitative properties of the phase space reconstruction using recurrence plots. We learned how we can interpret the recurren plots and its properties.  
 
 
 
