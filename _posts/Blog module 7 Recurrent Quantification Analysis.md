@@ -2,7 +2,7 @@
 
 In module 6 we learned about techniques in order to reconstruct phase spaces and how to visualize them.However, we ended the module without a satisfying conclusion about the phase space itself.
 In this module we will aim to derive quantitative properties based on the phase space reconstruction.
-In order to do so, we will use recurrence quantification analysis (RQA) and apply it to the heart rate time series depicted below. 
+In order to do so, we will use recurrence quantification analysis (RQA) and apply it to the heart rate time series for one day depicted below. 
 
 ``` 
 data <- read.csv("Actigraph.csv")
@@ -26,6 +26,8 @@ print(rqa1[1:10])
 
 *Figure 2: Recurrence plot for subset 1*
 
+We can observe several features in the obtained recurrence plot. Marwan et al. (2007) states that white areas or bands are related to the occurrence of abrupt changes in the dynamics as well as extreme events in the data. In addition, the vertical and horizontal lines may indicate that some states do not change or change slowly for some time. For Figure 2 we note that a significant part of the plot is white indicating abrupt changes. This may be indicated as the subject of the time series participating in some activity, which may have changed the heart rate. Vertical and horizontal lines are aditionally present. Naturally, a large part of the day humans do the same activity for a extended amount of time e.g working at a desk, wathcing tv. This may have caused the horizontal and vertical lines.
+
 | Property  | Value for 1st subset|
 | ------------- | ------------- |
 | The percentage of recurrent points| 4.76 |
@@ -38,7 +40,7 @@ print(rqa1[1:10])
 
 *Table 1: property values for subset 1*
 
-Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large to obtain a recurrence rate of 4.76. The length of the diagonal lines in an recurrent plot can be linked to the predictability of the underlying system (Marwan et al., 2007). For our time series the average length of the line structures is relatively small (8.01) comparing to the length of the longest diagonal line segment. The Shannon information entropy is a measure of the complexity of the dynamics (Letellier, 2006). 
+Interpreting these parameters is not standard. Using literature we aim to understand what these parameters mean for the heart rate time series. The percentage of recurrent points or recurrence rate is rather straight forward. Marwan et al (2007) mention that it is a measure of the density of recurrence points in the recurrent plot. As stated, this rate has been fixed to between 1 and 5 percent when the radius was determined. Using a radius of 20 we obtain a recurrence rate of 4.76. Given that the majority our heart rate measurements lie between 60 and 140 this radius is rather large to obtain a recurrence rate of 4.76. The length of the diagonal lines in an recurrent plot can be linked to the predictability of the underlying system (Marwan et al., 2007). For our time series the average length of the line structures is relatively small (8.01) comparing to the length of the longest diagonal line segment. The Shannon information entropy is a measure of the complexity of the dynamics (Letellier, 2006). The proportion of recurrent plots forming vertical line structures, or laminarity, indicates the tendency of a point to repeat the same state. This proportion is high for our recurrence plot, which could mean that the time series tends to return to the same state often.
 
 For the sake of consistency we will use the same radius for the second subset.
 
@@ -69,5 +71,4 @@ print(rqa2[1:10])
 Letellier, C. (2006). Estimating the Shannon entropy: Recurrence plots versus symbolic dynamics. Physical review letters, 96(25), 254102.
 
 Marwan, N., Carmen Romano, M., Thiel, M., and Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics Reports, 438(5), 237-329.
-
 
