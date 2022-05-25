@@ -26,7 +26,7 @@ print(rqa1[1:10])
 
 *Figure 2: Recurrence plot for subset 1*
 
-We can observe several features in the obtained recurrence plot. Marwan et al. (2007) states that white areas or bands are related to the occurrence of abrupt changes in the dynamics as well as extreme events in the data. In addition, the vertical and horizontal lines may indicate that some states do not change or change slowly for some time. For Figure 2 we note that a significant part of the plot is white indicating abrupt changes. This may be indicated as the subject of the time series participating in some activity, which may have changed the heart rate. Vertical and horizontal lines are aditionally present. Naturally, a large part of the day humans do the same activity for a extended amount of time e.g working at a desk, wathcing tv. This may have caused the horizontal and vertical lines.
+We can observe several features in the obtained recurrence plot. Marwan et al. (2007) states that white areas or bands are related to the occurrence of abrupt changes in the dynamics as well as extreme events in the data. In addition, the vertical and horizontal lines may indicate that some states do not change or change slowly for some time. For Figure 2 we note that a significant part of the plot is white indicating abrupt changes. This may be indicated as the subject of the time series participating in some activity, which may have changed the heart rate. Vertical and horizontal lines are aditionally present. Naturally, a large part of the day humans do the same activity for a extended amount of time e.g working at a desk, wathcing tv. This may have caused the horizontal and vertical lines. Using the properties denoted in Table 1 we are able to make new conclusions regarding the time series.
 
 | Property  | Value for 1st subset|
 | ------------- | ------------- |
@@ -55,7 +55,7 @@ print(rqa2[1:10])
 *Figure 3: Recurrence plot for subset 2*
 
 
-Subset 2 contains the part where the subject of the time series goes to bed. This means that a rather abrupt could also be observed in the recurrence plot. When comparing Figure 2 and 3 one will note that a larger portion of Figure 3 is white. This may indicate the abrupt change from daily activities to sleeping. The resemblance of the two Figures is high, as one might expect since it originates from the same time series.
+Subset 2 contains the part where the subject of the time series goes to bed. This means that a rather abrupt could also be observed in the recurrence plot. When comparing Figure 2 and 3 one will note that a larger portion of Figure 3 is white. This may indicate the abrupt change from daily activities to sleeping. The resemblance of the two Figures is high, as one might expect since it originates from the same time series. The derived properties are denoted in Table 2.
 
 | Property  | Value for 2nd subset |
 | ------------- | ------------- |
