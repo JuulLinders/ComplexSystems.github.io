@@ -6,7 +6,7 @@ We can further investigate these changes through topology in attractor dynamics.
 
 Topology, in other words, is the graphical representation of differential equations. They are also called phase space or state space. In a later module we will discuss phase space reconstruction and how it can be used to determine the complexity (dimensionality) of a system. For now we will focus vector fields, which is also a topology in attractor dynamics.
 
-## Topology features
+### Topology features
 
 Vectors are data objects that have a magnitude and a direction in which they are going and can be pulled or repelled towards data values. In this module we are going to specifically look at how we can make sense of de direction of these vectors. The most basic constructs are attractors and repellors. An attractor pulls vectors towards a setpoint and will be very densely structured. A setpoint is a point of no change and is the place behaviour in the system is measured in relation to this value. A repellor is the opposite of an attractor and will push (repel) vectors away from a setpoint. The last one I would like to highlight, is the saddle. This setpoint acts as both an attractor as well as a repellor, which pulls vectors from one direction while simultaneously pulling vectors from another direction.
 Let us first take a look a vector field from our activity monitoring dataset. In order to make this plot we have to make a heartrate vector variable, or change in heartrate compared to a previous datapoint (lag).  We do this by subtracting the lead points by -1 lag points and dividing that by 2.
@@ -35,6 +35,6 @@ When we use this variable in the regression format as before we get the same res
 
 ![image](https://user-images.githubusercontent.com/106141937/170374793-cf58eca7-63a1-40f9-b3a5-cabfdf17b3e4.png)
 
-## Nullclines 
+### Nullclines 
 
 Now we have indicators how many attractors and repellors there are, we could try to determine the place of nullclines, previously referred to as setpoints. 
