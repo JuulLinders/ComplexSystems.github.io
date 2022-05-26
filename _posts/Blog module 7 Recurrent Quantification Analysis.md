@@ -1,4 +1,4 @@
-## Blog Module 6 Phase-Space Reconstruction
+## Blog Module 7 Recurrent Quantification Analysis
 
 In module 6 we learned about techniques in order to reconstruct phase spaces and how to visualize them.However, we ended the module without a satisfying conclusion about the phase space itself.
 In this module we will aim to derive quantitative properties based on the phase space reconstruction.
