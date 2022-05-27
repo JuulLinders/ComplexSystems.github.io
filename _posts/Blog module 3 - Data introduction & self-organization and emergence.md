@@ -10,10 +10,13 @@ In this figure, the light blue line represents user_1’s HR when he was awake h
 
 Heart Rate Variability (HRV) is an indicator widely used in clinical settings (Cleveland Clinic, 2021). HRV measures variety  R-R interval; the time between two consecutive heartbeats. More specifically, in an electrocardiogram (ECG) of two heartbeats, the R-R interval is the time between two consecutive ‘R’-peaks. For this measure we use the R-R interval data from the RR.csv file.The heart is driven by the autonomic nervous system. It operates without you thinking about it, and it even operates when the person is asleep. The autonomic nervous system consists of parasympathetic and sympathetic nervous systems. The sympathetic nervous system can control increases in heart rate, for example when a dangerous situation requires so. The parasympathetic nervous system can do the exact opposite; decreasing the heart rate. Usually, a higher HRV is associated with better adaptation of the body. People with a higher HRV experience less stress than people with a lower HRV. Moreover, a low HRV can be an indicator of future health problems. 
 
-To investigate the difference between the participant’s HRV while asleep and the HRV while being awake, we plot the Interbeat intervals of the period between the two sleeps , and another 26 minutes in which the participant was asleep. (plot uitleg)
+The Poincaré plot is a recurrence plot, used to visualize and quantify the correlation between two consecutive data points in a time-series (Satti et al., 2019). It is extensively used in HRV analyses, for the detection of fluctuations in HRV. To demonstrate the Poincaré plot, we use the ibi_s (Interbeat Interval) data of RR.csv, along with Python’s toolbox for HRV, ‘pyhrv’. We plot user_1’s 26 minutes between his two periods of sleep. Additionally, we make another plot with 26 minutes of Interbeat Interval data when sleeping. 
 
-![RR_user1_26minsleep](https://user-images.githubusercontent.com/105788429/170383049-a2ffec6c-ad89-458a-ab3e-5600fe81f3c3.png)
-![RR_user1_26minwake](https://user-images.githubusercontent.com/105788429/170383053-745abd5b-f2ad-4260-b045-37f680075b41.png)
+
+The Poincaré plot is a scatter graph, with a datapoint (An) in time on the x-axis, versus it’s consecutive point (An + 1) on the y-axis. The origin (0, 0) is located in the center. 
+
+![Poincaré_asleep](https://user-images.githubusercontent.com/105788429/170713308-00220606-60da-4468-99cb-23b8fa47ddc0.png)
+![Poincaré_awake](https://user-images.githubusercontent.com/105788429/170713310-987252fa-b1b9-45e2-9b16-f25619ae4d73.png)
 
 
 These pattern formations are self-organized. The neurons in the nervous system do not have information about how or when to make the heart beat. To understand the behavior of a complex system, requires a complex systems theory approach. In the next modules, we will explore more properties of complex systems analyses. 
