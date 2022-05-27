@@ -1,6 +1,6 @@
 # Attractor Dynamics
 
-In this module we will explore our activity monitoring dataset by using topology to form and testing them as well. 
+In this module we will explore our activity monitoring dataset by using topology features and testing them as well. 
 In the previous module (Properties of Dynamical systems) we saw various phase shifts in the timeline regarding heartrate (HR), which is probably an effect of change in activity. 
 We can further investigate these changes through topology in attractor dynamics.
 
