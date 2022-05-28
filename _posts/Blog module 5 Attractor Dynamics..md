@@ -17,6 +17,7 @@ Topology, in other words, is the graphical representation of differential equati
 Vectors are data objects that have a magnitude and a direction in which they are going and can be pulled or repelled towards data values. In this module we are going to specifically look at how we can make sense of de direction of these vectors. The most basic constructs are attractors and repellors. An attractor pulls vectors towards a setpoint and will be very densely structured. A setpoint is a point of no change and is the place behaviour in the system is measured in relation to this value. A repellor is the opposite of an attractor and will push (repel) vectors away from a setpoint. The last one we would like to highlight, is the saddle. This setpoint acts as both an attractor as well as a repellor, which pulls vectors from one direction while simultaneously pulling vectors from another direction.
 Let us first take a look a vector field from our activity monitoring dataset. In order to make this plot we have to make a heartrate vector variable, or change in heartrate compared to a previous datapoint (lag).  We do this by subtracting the lead points by -1 lag points and dividing that by 2.
 ![vectorfield](https://user-images.githubusercontent.com/106141937/170374256-22e40399-fae1-4412-8f04-03bcb5c58262.png)
+
 *Figure 2: Heartrate vector field*
 
 This figure is a vector field density plot, with heartrate on the Y-axis and time in seconds on the X-axis starting at 10:10 in the morning until 00:46 in the night when the subject is going to sleep. We see various high density areas most of which are either in the 90/100 range or 60/70 range. These areas  could be indicators for attractors. My guess would that there are at least 2 attractors for those areas and a repellor. To check this we will perform a linear regression with a polynomial term (HR^3) with the following code:
@@ -33,7 +34,7 @@ This gives the following result:
 | HR^2| -4.2395820 | 0.00305 |
 | HR^3| -8.8944475 | 5.15e^-10 |
 
-*Table 1 linear regression output
+*Table 1: linear regression output
 
 As we can see we have 2 significant negative slopes, which indicates that there are 2 attractors. Though not significant, there is one positive slope and that could mean there is a Repellor. Like our explanation in module 4 about the shifting phases in our dataset, these attractions could be caused by a change in activity due to either rest or workout. The data mainly revolves around those centers i
 Right now we have used difference scores to determine our vector variable however, there are other methods to calculate our vectors such as Generalized Orthogonal Local Derivative also known was GOLD. We will use the following function to calculate our derivatives (vectors) with the embedding parameter on 7. The reason for this will be explained in module 6 where we try to find the optimal amount of embedding dimensions.
