@@ -31,18 +31,26 @@ EmbedDimension(dataFrame = df1, lib = lib_point, pred = pred_point, maxE = 9, ta
 
 Judging from figure 4 it would seem like there are 4 embedding dimensions. These results are comprable with the Cao's method as the latter also estimates 4 embedding dimensions. However, the FNN is not entirely clear and it looks like it favors 2 dimensions. We will continu using 4 dimensions since we will also try to optimize our forecasting.
 
-![CCM vector magnitude-HR](https://user-images.githubusercontent.com/106141937/170389991-e6b85d0d-3363-43a2-807a-5d8f89c96510.png)
+## Determining nonlinearity
+Nonlinearity can also be defined as state depedency of a nonlinear dynamicl system. This means that the nonlinearity of a system is reflected by the degree of state dependency. It can be tested through sequential locally weighted global linear map analysis, or S-map. The parameter Rho quantifies the level of state depency where rho = 0 means no state dependency and therefore indicates a linear stochastic system. When rho > 0, it indicates for a nonlinear dynamical system.
 
 ```
+PredictNonlinear(dataFrame = df1, lib = lib_point, pred = pred_point, E=4, columns='HR', target ='HR')
+```
+
+## Finding Causality
+It might be possible to find a causal variable to help explain the heartrate variability in our timeseries. Alongside heartrate, vector magnitude was also measured. This construct is measured by movement derived from raw acceleration expressed in Newton-meter. It is very much plausible that an increase in vector magnitude might cause heartrate to go up as well. Convergent cross mapping is a tool that uses convergence as a criteria to determine causality. It reconstructs the state space using different library lengths from different time series.
+
+```
+xcor_out <- ccf(df2$HR,df2$Vector.Magnitude,lag.max=6,type="correlation",plot = FALSE)$acf
+cmap <- CCM(dataFrame = df2, E = 4, Tp = 0, columns = "Vector.Magnitude", target = "HR", libSizes = "10 1000 50", sample = 100, showPlot = TRUE )
+
 knitr::kable(tidy(Kendall::MannKendall(cmap$`HR:Vector.Magnitude`)))
 knitr::kable(tidy(Kendall::MannKendall(cmap$`Vector.Magnitude:HR`)))
 ```
 
-## Determining nonlinearity
-Nonlinearity can also be defined as state depedency of a nonlinear dynamicl system. This means that the nonlinearity of a system is reflected by the degree of state dependency. It can be tested through sequential locally weighted global linear map analysis, or S-map. The parameter Rho quantifies the level of state depency where rho = 0 means no state dependency and therefore indicates a linear stochastic system. When rho > 0, it indicates for a nonlinear dynamical system.
+## Forecasting
 
-## Finding Causality
-It might be possible to find a causal variable to help explain the heartrate variability in our timeseries. Alongside heartrate, vector magnitude was also measured. This construct is measured by movement derived from raw acceleration expressed in Newton-meter. It is very much plausible that an increase in vector magnitude might cause heartrate to go up as well. Convergent cross mapping is a tool that uses convergence as a criteria to determine causality. It reconstructs the state space using different library lengths from different time series.
 
 
 
