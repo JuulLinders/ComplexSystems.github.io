@@ -17,18 +17,18 @@ Firstly we are going to check for the optimal embedding dimension for our heart 
 
 ![Module 8 FNN](https://user-images.githubusercontent.com/106141937/170729036-68425e7c-3dda-4d89-8010-923293b6157e.png)
 
-*Figure 2: False nearest neighbors
+*Figure 2: False nearest neighbors*
 ### 2. Cao's method for estimating embedding dimensions
 ![module 8 Cao's method](https://user-images.githubusercontent.com/106141937/170729570-48114002-05a9-4bae-a132-83cf895d29e6.png)
 
-*Figure 3: Cao's method for estimating embedding dimensions
+*Figure 3: Cao's method for estimating embedding dimensions*
 ### 3. Optimizing for predictive skill
 
 ```
 EmbedDimension(dataFrame = df1, lib = lib_point, pred = pred_point, maxE = 9, tau = -1, columns='HR', target ='HR', numThreads = 8)
 ```
 ![module 8 ED](https://user-images.githubusercontent.com/106141937/170729095-bd708c91-7e20-404d-b46e-a331f9a81ee5.png)
-*Figure 4: estimating embedding dimensions for optimizing predictive skill
+*Figure 4: estimating embedding dimensions for optimizing predictive skill*
 
 Judging from figure 4 it would seem like there are 4 embedding dimensions. These results are comprable with the Cao's method as the latter also estimates 4 embedding dimensions. However, the FNN is not entirely clear and it looks like it favors 2 dimensions. We will continu using 4 dimensions since we will also try to optimize our forecasting.
 
@@ -39,7 +39,7 @@ Nonlinearity can also be defined as state depedency of a nonlinear dynamicl syst
 PredictNonlinear(dataFrame = df1, lib = lib_point, pred = pred_point, E=4, columns='HR', target ='HR')
 ```
 ![linearity](https://user-images.githubusercontent.com/106141937/170838948-9a3951ec-96f9-4192-8e14-921d9fb68325.png)
-*Figure 5: testing for linearity with theta on the x-axis and rho (prediction skill) on the y-axis
+*Figure 5: testing for linearity with theta on the x-axis and rho (prediction skill) on the y-axis*
 
 Figure 5 seems to indicate a negative slope however, almost all values of data are near one. This means it is still possible that the sytem is nonlinear. We do have to keep in mind that this might not be the case.
 
@@ -56,7 +56,7 @@ knitr::kable(tidy(Kendall::MannKendall(cmap$`Vector.Magnitude:HR`)))
 
 ![Module 8 HR-VM](https://user-images.githubusercontent.com/106141937/170876722-d8e788fd-c096-4d4e-bdc9-f04fc09a6d44.png)
 
-*Figure 6: convergent cross mapping between heartrate and vector.magnitude
+*Figure 6: convergent cross mapping between heartrate and vector.magnitude*
 
 CCM analysis clearly shows a unidirectional causality of the form vector magnitude causing heartrate variablity. This is in line with our expectation that the movement (or acceleration) causes heartrate to to change as well.
 
@@ -81,7 +81,7 @@ multiview_stats <- compute_stats(mv_out$Predictions$Observations,mv_out$Predicti
 | Multivariate | 0.9954919| 0.8167552 | 1.176071 |
 | Multiview | 0.9356755 | 9.742067 | 10.91309 |
 
-*Table 1: comparing various forecasting analysis by their forecasting skill (RHO), Mean absolute error (MAE) and root mean square error (RMSE).
+*Table 1: comparing various forecasting analysis by their forecasting skill (RHO), Mean absolute error (MAE) and root mean square error (RMSE)*
 
 Our best predictior, looking at table 1, was the univariate analysis. It has the best predition skill and also the lowest error values of the three. It should be noted that all of these methods had a very high prediction skill score, but clearly multiview performed the worst. These high scores of course look amazing, but they are based on a prediction horizon of one. This means it only predicts one second in the future and that is perticularly useful. Therefore we will run our best performing model (univariate analysis) for multiple prediction horizons to see how it will hold up. 
 
@@ -93,7 +93,7 @@ Our best predictior, looking at table 1, was the univariate analysis. It has the
 | 180 (3 minutes)| 0.6410092 | 21.23214 | 22.03917 |
 | 240 (4 minutes)| 0.4641346 | 24.72418 | 25.63775 |
 
-*Table 2: comparing prediction horizons in univarite (S-map) analysis and their performance in forecasting skill (RHO), Mean absolute error (MAE) and root mean square error (RMSE)
+*Table 2: comparing prediction horizons in univarite (S-map) analysis and their performance in forecasting skill (RHO), Mean absolute error (MAE) and root mean square error (RMSE)*
 
 Naturally we see a steady decline of prediction skill and incline in error rate the further we forecast in the future. At one and two minutes the prediction skill is still pretty good but after 3 and especially 4 minutes it dips too low to consider that sufficient.
 
