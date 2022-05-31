@@ -4,7 +4,7 @@ In this series of modules, we explore the open dataset ‘Multilevel Monitoring 
 The MMASH dataset consists of seven csv-files for each participant. The files contain information about participant characteristics; their sleep quality and sleep duration; scores for psychological questionnaires; a list of the activities performed throughout the day; clock genes and hormone concentrations and inter-beat intervals (IBI). Furthermore, the file ‘Actigraph.csv’, contains the HR in beats per minute (BPM), registered every time a heartbeat happened. This data allows us to plot day times against the participant’s HR. From the file ‘sleep.csv’, we derive the participant’s bedtime and wake-up time. 
 
 ![HR_user1_avg](https://user-images.githubusercontent.com/105788429/170371272-b4929065-a530-4343-918f-aa6ab023436b.png)
-_figure 1 - HR + average HR user_1_ 
+_Figure 1 - HR + average HR user_1_ 
 
 In this figure, the light blue line represents user_1’s HR when he was awake hours. The dark blue line displays user_1’s HR during the period he was asleep. The red line is the average HR, computed for each hour. User_1 woke up during the night, around 03:15, and went back to sleep shortly after. At first glance, one can see differences between user_1’s heart rate during sleep and his heart rate when he was awake. The HR seems lower, and there is less variety. Only in the last phase of both sleep cycles, there seems to be less consistency in the participant’s HR.
 
@@ -16,10 +16,10 @@ The Poincaré plot is a recurrence plot, used to visualize and quantify the corr
 
 ![Poincaré_awake](https://user-images.githubusercontent.com/105788429/170713310-987252fa-b1b9-45e2-9b16-f25619ae4d73.png)
 
-_figure 2 - Poincaré plot awake_
+_Figure 2 - Poincaré plot awake_
 ![Poincaré_asleep](https://user-images.githubusercontent.com/105788429/170713308-00220606-60da-4468-99cb-23b8fa47ddc0.png)
 
-_figure 3 - Poincaré plot asleep_
+_Figure 3 - Poincaré plot asleep_
 
 The Poincaré plot is a scatter graph, with a datapoint (An) in time on the x-axis, versus it’s consecutive point (An + 1) on the y-axis. The origin (0, 0) is located in the center. The first plot is based on wake data, the second plot is based on sleep data. The Poincaré plot of sleep data seems more centered around the point 0,0, which implies there is less variation in time beween consective beats. In other words, the HRV when sleeping seems lower. On the other hand, the Poincaré plo of wake data is also centered, but also seems more scattered, which would imply a higher HRV.
 
