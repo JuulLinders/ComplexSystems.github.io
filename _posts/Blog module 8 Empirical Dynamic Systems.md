@@ -6,7 +6,7 @@ We will be using the same data as the other modules, mainly the dataset from Ros
 
 ![Module 8 HR timeseries](https://user-images.githubusercontent.com/106141937/170733573-2ac738ea-b25b-4d21-a818-fee6a449e034.png)
 
-*Figure 1: Heartrate timeseries from 23:00 till 01:00
+*Figure 1: Heartrate timeseries from 23:00 till 01:00*
 
 
 
