@@ -9,7 +9,7 @@ library(chron)
 library(tseriesChaos)
 library(nonlinearTseries)
 df <- data %>% select('time', 'HR')
-df1 <- df %>% slice(37414:46450)   #40329 is one day, 11:00 37414, 10:00 34489 -, 01:00 46150
+df1 <- df %>% slice(37414:46450)   
 
 second(df1$time)
 
