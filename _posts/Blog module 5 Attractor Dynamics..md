@@ -34,7 +34,7 @@ This gives the following result:
 | HR^2| -4.2395820 | 0.00305 |
 | HR^3| -8.8944475 | 5.15e^-10 |
 
-*Table 1: linear regression output
+*Table 1: linear regression output*
 
 As we can see we have 2 significant negative slopes, which indicates that there are 2 attractors. Though not significant, there is one positive slope and that could mean there is a Repellor. Like our explanation in module 4 about the shifting phases in our dataset, these attractions could be caused by a change in activity due to either rest or workout. The data mainly revolves around those centers i
 Right now we have used difference scores to determine our vector variable however, there are other methods to calculate our vectors such as Generalized Orthogonal Local Derivative also known was GOLD. We will use the following function to calculate our derivatives (vectors) with the embedding parameter on 7. The reason for this will be explained in module 6 where we try to find the optimal amount of embedding dimensions.
@@ -52,7 +52,7 @@ When we use this variable in the regression format as before we get the same res
 | HR^2| -2.515e^^-12 | <2e^-16|
 | HR^3| --3.475e^-12 | <2e^-16 |
 
-*Table 2 linear regression output
+*Table 2 linear regression output*
 
 In this module we were able to map the heartrate vectors in a density vector field and visualize where the vectors are most densely packed. We explored different topology features and concluded within our dataset there are at least 2 attractors and 1 repellor. Using difference scores but also the GOLD method to determine our vectors gave us confirmation in our findings through linear regression.
 
