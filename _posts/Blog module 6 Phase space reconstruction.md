@@ -108,7 +108,7 @@ We notice that the Figure that represents index 20000 to 30000 contains less low
 Naturally, we only plotted the first three dimensions and one should check all the plots before coming to a conclusion. In addition, specific quantitative properties can be derived using Recurrence Quantification Analysis (RQA). Fortunately, we will cover this topic in the next module, so stay tuned!
 
 
-# References
+## References
 Ozheredov, V. A., Chibisov, S. M., Blagonravov, M. L., Khodorovich, N. A., Demurov, E. A., Goryachev, V. A., ... & Meladze, Z. A. (2017). Influence of geomagnetic activity and earth weather changes on heart rate and blood pressure in young and healthy population. International journal of biometeorology, 61(5), 921-929.
 
 Vadlamudi, C. V., & Vadlamudi, S. P. D. (2018). Mathematical Essentials. In Handbook of statistics (Vol. 38, pp. 53-73). Elsevier.
