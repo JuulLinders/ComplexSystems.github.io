@@ -76,7 +76,7 @@ In this module we were able to obtain quantitative properties of the phase space
 
 
 
-### References
+## References
 Letellier, C. (2006). Estimating the Shannon entropy: Recurrence plots versus symbolic dynamics. Physical review letters, 96(25), 254102.
 
 Marwan, N., Carmen Romano, M., Thiel, M., and Kurths, J. (2007). Recurrence plots for the analysis of complex systems. Physics Reports, 438(5), 237-329.
