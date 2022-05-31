@@ -97,11 +97,11 @@ Our best predictior, looking at table 1, was the univariate analysis. It has the
 
 Naturally we see a steady decline of prediction skill and incline in error rate the further we forecast in the future. At one and two minutes the prediction skill is still pretty good but after 3 and especially 4 minutes it dips too low to consider that sufficient.
 
-## Conclusion
+### Conclusion
 
 Using empirical dynamic modeling we were able to analyse our timeseries and make a forecasting model. We compared three different methods to estimate the embedding dimensions and found that FNN and optimizing for prediction skill were comprable to one another. Using CCM we confirmed our expectation that there is a unidirectional causal relationship between heartrate and vector magnitude, with vector magnitude causing heartrate variablity. Trying 3 different types of analysis we found that our univariate analysis performed better over multivariate en multiview analysis. Our final univariate model can predict 2 minutes into the future with fairly high accuracy.
 
-### References
+## References
 Chang, C. W., Ushio, M., & Hsieh, C. H. (2017). Empirical dynamic modeling for beginners. Ecological research, 32(6), 785-796.
 
 Rossi, A., Da Pozzo, E., Menicagli, D., Tremolanti, C., Priami, C., Sirbu, A., Clifton, D., Martini, C., & Morelli, D. (2020). Multilevel Monitoring of Activity and Sleep in Healthy People (version 1.0.0). PhysioNet. https://doi.org/10.13026/cerq-fc86.
